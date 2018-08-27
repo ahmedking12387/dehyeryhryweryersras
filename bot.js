@@ -11,7 +11,7 @@ const client = new Discord.Client();
 client.on("message", async message => {
     if (message.author.bot) return;
     if (message.channel.type === "dm") return;
-    let prefix = "5";
+    let prefix = "1";
     let messageArray = message.content.split(" ");
     let command = messageArray[0];
 
@@ -29,7 +29,7 @@ client.on('ready', () => {
     client.user.setStatus("Online")
 });
  
-const prefix = "5"
+const prefix = "1"
 client.on('message', async msg => {
     if (msg.author.bot) return undefined;
  
@@ -45,7 +45,7 @@ client.on('message', async msg => {
  
     if (command === `play`) {
         const voiceChannel = msg.member.voiceChannel;
-        if (!voiceChannel) return msg.channel.send('يجب توآجد حضرتك بروم صوتي .');
+        if (!voiceChannel) return msg.channel.send('يجب توآجد  بروم صوتي .');
         const permissions = voiceChannel.permissionsFor(msg.client.user);
         if (!permissions.has('CONNECT')) {
  
@@ -77,7 +77,7 @@ client.on('message', async msg => {
                     var videos = await youtube.searchVideos(searchString, 5);
                     let index = 0;
                     const embed1 = new Discord.RichEmbed()
-                    .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
+                    .setDescription(`**الرجآء منك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
  
                     .setFooter("-")
